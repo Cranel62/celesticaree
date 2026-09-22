@@ -5,10 +5,19 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const mysql = require('mysql2/promise');
+const helmet = require('helmet');
+const { apiLimiter, authLimiter } = require('./middleware/rateLimiter');
+const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/celesticaree';
+const isProduction = process.env.NODE_ENV === 'production';
+
+// Trust reverse proxy for Render / Vercel HTTPS cookies and rate-limiting
+if (isProduction) {
+  app.set('trust proxy', 1);
+}
 
 // XAMPP MySQL Connection Pool
 const mysqlPool = mysql.createPool({
@@ -73,20 +82,24 @@ function databaseError(res, error) {
   return res.status(500).json({ success: false, error: 'Database error. Please try again later.' });
 }
 
-// Middleware
+// Security & Middleware
+app.use(helmet());
 app.use(express.json({ limit: '15mb' }));
 app.use(express.urlencoded({ extended: true, limit: '15mb' }));
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173',
   credentials: true
 }));
 
+app.use('/api/', apiLimiter);
+
 app.use(session({
-  secret: 'celesticare_secret_key_session_2026',
+  secret: process.env.SESSION_SECRET || 'celesticare_secret_key_session_2026',
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: false,
+    secure: isProduction,
+    sameSite: isProduction ? 'none' : 'lax',
     httpOnly: true,
     maxAge: 1000 * 60 * 60 * 24 * 30
   }
@@ -368,8 +381,8 @@ app.post(['/api/auth/register', '/api/modal_register.php'], async (req, res) => 
   }
 });
 
-// 7. Login (Supports both standard /api/auth/login and legacy /api/modal_login.php)
-app.post(['/api/auth/login', '/api/modal_login.php'], async (req, res) => {
+// 7. Login (Protected with authLimiter for brute-force prevention)
+app.post(['/api/auth/login', '/api/modal_login.php'], authLimiter, async (req, res) => {
   const { email, password } = req.body;
   const trimmedEmail = (email || '').trim().toLowerCase();
 
@@ -988,5 +1001,8 @@ app.post(['/api/undertone/save', '/api/api_save_undertone.php'], async (req, res
     databaseError(res, err);
   }
 });
+
+// Centralized Error Handler (must be after all routes)
+app.use(errorHandler);
 
 app.listen(PORT, () => console.log(` Server running on http://localhost:${PORT}`));
