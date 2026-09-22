@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.pageWrapper {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #d3cce3 0%, #8d65c6 100%);
+  padding: 100px 20px 40px;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.brandHeading {
+  font-weight: 700;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #1a202c;
+}
+
+.resultSection {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  text-align: left;
+}
+
+.imageBox {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.wheel {
+  width: 300px;
+  height: 300px;
+  transform-origin: 50% 50%;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.05s linear;
+}
+
+.textBox {
+  flex: 1 1 55%;
+}
+
+.textBox h2 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.seasonBox {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.palette {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+
+.colorBox {
+  flex: 1;
+  min-width: 65px;
+  height: 70px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.description {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.infoBox {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.continueWrapper {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.btnContinue,
+.btnLoginSubmit {
+  background-color: #6b5b95;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 35px;
+  min-width: 200px;
+  transition: 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btnContinue:hover,
+.btnLoginSubmit:hover {
+  background-color: #8c77c5;
+  color: #fff;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalBox {
+  background-color: #2e2e2e;
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.modalBox h2 {
+  font-size: 19px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.brandTitle {
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.formControl {
+  background-color: #4b4b4b;
+  border: none;
+  color: #fff;
+  border-radius: 30px;
+  padding: 12px 20px;
+  width: 100%;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.formControl:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(107, 91, 149, 0.25);
+}
+
+.passwordContainer {
+  position: relative;
+}
+
+.togglePassword {
+  position: absolute;
+  right: 15px;
+  top: 40%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #cfcfcf;
+  cursor: pointer;
+}
+
+.textMuted {
+  color: #cfcfcf;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.textMuted span {
+  color: #d3bfff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.closeModalBtn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.alertDanger {
+  background: #f8d7da;
+  color: #842029;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.alertSuccess {
+  background: #d1e7dd;
+  color: #0f5132;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .resultSection {
+    flex-direction: column;
+  }
+  .wheel {
+    width: 220px;
+    height: 220px;
+  }
+  .palette {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 10px;
+  }
+  .colorBox {
+    min-width: 50px;
+    height: 50px;
+  }
+}

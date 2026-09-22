@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 5, 20, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.modalBox {
+  background: linear-gradient(145deg, #241c30 0%, #151020 100%);
+  border: 1px solid rgba(187, 166, 255, 0.25);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 480px;
+  padding: 30px 25px;
+  position: relative;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: #cbbfff;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.closeBtn:hover {
+  transform: scale(1.2);
+  color: #fff;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #dcd3ff;
+  margin: 0 0 6px 0;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #e0d7ff;
+}
+
+.ratingRow {
+  display: flex;
+  gap: 8px;
+}
+
+.starBtn {
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s, transform 0.1s;
+}
+
+.starActive {
+  color: #f7c948;
+}
+
+.starBtn:hover {
+  transform: scale(1.15);
+}
+
+.select, .textarea {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: #fff;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.select:focus, .textarea:focus {
+  border-color: #bba6ff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.select option {
+  background: #241c30;
+  color: #fff;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.vibePills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #dcd3ff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pillActive {
+  background: #bba6ff;
+  color: #1a102a;
+  border-color: #bba6ff;
+  font-weight: 600;
+}
+
+.submitBtn {
+  background: linear-gradient(135deg, #bba6ff 0%, #8b5fbf 100%);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(139, 95, 191, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.submitBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 95, 191, 0.5);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.alertSuccess {
+  background: rgba(46, 204, 113, 0.2);
+  border: 1px solid #2ecc71;
+  color: #a8f0c2;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.alertError {
+  background: rgba(231, 76, 60, 0.2);
+  border: 1px solid #e74c3c;
+  color: #ffb8b1;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  text-align: center;
+}

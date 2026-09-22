@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.pageWrapper {
+  min-height: 100vh;
+  margin: 0;
+  padding: 140px 20px 40px;
+  background: linear-gradient(135deg, #b99aee 0%, #e9e4f0 100%);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.quizBox {
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1a202c;
+}
+
+.subtext {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.imagesContainer {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.imageWrapper {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: transform 0.2s ease;
+}
+
+.imageOption {
+  width: 150px;
+  height: 130px;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.imageWrapper:hover .imageOption {
+  transform: scale(1.05);
+  border-color: #6b5b95;
+}
+
+.imageWrapper:active .imageOption {
+  transform: scale(0.95);
+}
+
+.label {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #333;
+  text-transform: capitalize;
+  font-size: 1rem;
+}
+
+.notesContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.note {
+  background: #e8e8e8;
+  padding: 20px;
+  border-radius: 15px;
+  flex: 1;
+  min-width: 250px;
+  color: #333;
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.loadingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+}
+
+.loadingSpinner {
+  background: white;
+  padding: 25px 45px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #6b5b95;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 12px auto;
+}
+
+.loadingSpinner p {
+  margin: 0;
+  font-weight: 500;
+  color: #333;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .pageWrapper {
+    padding-top: 100px;
+  }
+
+  .quizBox {
+    padding: 30px 20px;
+  }
+
+  .imagesContainer {
+    gap: 15px;
+  }
+
+  .imageOption {
+    width: 95px;
+    height: 85px;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .subtext {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+  }
+}

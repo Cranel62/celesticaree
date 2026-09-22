@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+.dashboardPage {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #d3bff5 0%, #3c3b7d 100%);
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  padding: 100px 20px 60px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mainCard {
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: none;
+  border: none;
+  padding: 30px;
+}
+
+.headerTitle {
+  color: #6a1b9a;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.headerSubtitle {
+  margin-bottom: 0;
+  color: #6c757d;
+}
+
+.btnEditProfile {
+  border-radius: 30px;
+  padding: 10px 25px;
+  background-color: #7a3da1;
+  color: white;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnEditProfile:hover {
+  background-color: #642f87;
+  color: white;
+}
+
+.btnSecureAccount {
+  border-radius: 30px;
+  padding: 5px 15px;
+  background-color: #f7b731;
+  color: #2e2e2e;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+.secureBadge {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  background-color: #dc3545;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 5px;
+  font-size: 0.6rem;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.sectionTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Card Sections */
+.profileSection,
+.astroSection,
+.colorSection,
+.aestheticSection,
+.outfitSection,
+.moodboardSection {
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Profile Section */
+.profileInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.profileItem {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.profileLabel {
+  font-weight: 700;
+  color: #6a1b9a;
+  min-width: 100px;
+  font-size: 0.9rem;
+}
+
+.profileValue {
+  color: #333;
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* Astro Section */
+.zodiacHeader {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.zodiacName {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #6a1b9a;
+}
+
+.zodiacDetails {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.zodiacDetailItem {
+  margin-bottom: 8px;
+  display: flex;
+}
+
+.zodiacLabel {
+  font-weight: 600;
+  color: #6a1b9a;
+  min-width: 120px;
+}
+
+.zodiacValue {
+  color: #555;
+  flex: 1;
+}
+
+.astroGlowBtn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #000;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(106, 27, 154, 0.4);
+  min-width: 200px;
+  text-align: center;
+}
+
+.astroGlowBtn:hover:not(:disabled) {
+  background: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(106, 27, 154, 0.7);
+  color: white;
+}
+
+.astroGlowBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Color Section */
+.colorContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.colorWheel {
+  max-width: 180px;
+  height: auto;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 12px;
+}
+
+.colorSwatch {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: inline-block;
+  margin: 0 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btnStyle {
+  display: block;
+  margin: 10px auto 0;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  width: fit-content;
+  min-width: 180px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btnStyle:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Aesthetics & Style */
+.enhancedBadge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 8px auto;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+.enhancedAestheticImage {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 12px 0;
+  border: 3px solid #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.enhancedOutfitPreview {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+
+.enhancedClothingItem {
+  width: 75px;
+  height: 75px;
+  border-radius: 12px;
+  background: white;
+  border: 2px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.enhancedClothingImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 4px;
+}
+
+.moreBadge {
+  background: linear-gradient(135deg, #8b5fbf, #6d28d9);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Moodboard */
+.moodboardComplete {
+  background: linear-gradient(135deg, #8b5fbf, #6d28d9);
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  padding: 25px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.moodboardIncomplete {
+  background: #f8f9fa;
+  text-align: center;
+  border-radius: 10px;
+  padding: 25px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #dee2e6;
+}
+
+/* Modals */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modalContent {
+  background-color: #2e2e2e;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modalTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.closeModalBtn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.formControl {
+  background-color: #4b4b4b;
+  border: none;
+  color: #fff;
+  border-radius: 30px;
+  padding: 12px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  margin-bottom: 12px;
+}
+
+.formControl:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(107, 91, 149, 0.25);
+}
+
+.btnSave {
+  background-color: #6b5b95;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 20px;
+  width: 100%;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btnSave:hover {
+  background-color: #8c77c5;
+}
+
+/* Force Password Modal */
+.forceModalContent {
+  background: linear-gradient(135deg, #2e2e2e, #3b3b3b);
+  border: 3px solid #ffc107;
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 650px;
+  color: #fff;
+}
+
+.alertCustom {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 99999;
+  min-width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  padding: 12px 20px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+.mysticalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, #1a0f0f 0%, #0a0505 100%);
+  overflow: hidden;
+  font-family: 'Cinzel', serif;
+  color: #fff;
+  z-index: 1;
+}
+
+.mysticalContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(100, 50, 50, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+  animation: mistPulse 10s ease-in-out infinite;
+}
+
+@keyframes mistPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+/* Loading Overlay Screen */
+.mysticalLoading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0a0505;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  transition: opacity 1s ease;
+}
+
+.mysticalLoading.loadingHidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loadingSymbol {
+  font-size: 7rem;
+  animation: floatSymbol 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px #8a6a4a);
+}
+
+@keyframes floatSymbol {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+.tarotRoot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Recent Reading Banner */
+.recentReadingBanner {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 90%;
+  max-width: 800px;
+  background: linear-gradient(135deg, rgba(138, 106, 154, 0.25) 0%, rgba(98, 76, 114, 0.35) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #b59dab;
+  border-radius: 60px;
+  padding: 0.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: slideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.recentReadingBanner.fadeOut {
+  opacity: 0;
+  transform: translate(-50%, -20px);
+  pointer-events: none;
+}
+
+.recentReadingContent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.recentReadingIcon {
+  font-size: 2rem;
+  background: rgba(181, 157, 171, 0.2);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #b59dab;
+  box-shadow: 0 0 15px rgba(181, 157, 171, 0.3);
+}
+
+.recentReadingText {
+  flex: 1;
+}
+
+.recentReadingText h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+  color: #f0d0f0;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.recentReadingText p {
+  font-size: 0.9rem;
+  color: #d0b0d0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.recentReadingButton {
+  padding: 0.6rem 1.8rem;
+  background: transparent;
+  border: 1px solid #b59dab;
+  color: #f0d0f0;
+  text-decoration: none;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.recentReadingButton::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.recentReadingButton:hover {
+  background: #b59dab;
+  color: #1a0f1a;
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(181, 157, 171, 0.3);
+}
+
+.recentReadingButton:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.recentReadingDismiss {
+  background: transparent;
+  border: none;
+  color: #8a7a8a;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: 50%;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.recentReadingDismiss:hover {
+  color: #f0d0f0;
+  background: rgba(181, 157, 171, 0.2);
+  transform: scale(1.1);
+}
+
+/* Tarot Deck Selection UI inside Root */
+.selectionContainer {
+  text-align: center;
+  max-width: 900px;
+  padding: 20px;
+  z-index: 20;
+}
+
+.oracleTitle {
+  font-size: 2.8rem;
+  letter-spacing: 2px;
+  color: #f7e1b5;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 20px rgba(247, 225, 181, 0.4);
+}
+
+.oracleSubtitle {
+  font-family: 'Inter', sans-serif;
+  color: #c9b4a4;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.cardsGrid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.readingOptionCard {
+  background: rgba(26, 15, 26, 0.65);
+  border: 1px solid rgba(181, 157, 171, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  width: 320px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+.readingOptionCard:hover {
+  transform: translateY(-8px);
+  border-color: #f0d0f0;
+  box-shadow: 0 12px 35px rgba(181, 157, 171, 0.3);
+}
+
+.optionIcon {
+  font-size: 3.5rem;
+  margin-bottom: 1.2rem;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+}
+
+.optionTitle {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: #fce8f3;
+  font-weight: 600;
+}
+
+.optionDesc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #baa4b5;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.btnSelectMode {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  background: #8a6a9a;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 0.6rem 1.6rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.readingOptionCard:hover .btnSelectMode {
+  background: #b59dab;
+  color: #1a0f1a;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -30px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .recentReadingBanner {
+    top: 70px;
+    border-radius: 30px;
+  }
+  
+  .recentReadingContent {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 0.8rem;
+  }
+  
+  .recentReadingText {
+    flex: 0 0 100%;
+    text-align: center;
+  }
+  
+  .recentReadingButton {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .recentReadingDismiss {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+
+  .oracleTitle {
+    font-size: 2rem;
+  }
+}

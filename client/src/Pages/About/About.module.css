@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap');
+
+.aboutContainer {
+  --bg-gradient-start: #3b3b80;
+  --bg-gradient-end: #7d66b9;
+  --page-bg: #f7f7fa;
+  --panel-bg: #ffffff;
+  --panel-border: rgba(0, 0, 0, 0.08);
+  --headline: #1c1c27;
+  --bodytext: #2f2f38;
+  --subtext: #575767;
+  --accent-pill-bg: #e8e1f6;
+  --accent-pill-text: #3b2d61;
+  --accent-pill-border: #7e61c9;
+  --inactive-tab-text: #6a6a75;
+  --radius-card: 18px;
+  --radius-lg: 12px;
+  --radius-sm: 8px;
+  --shadow-card: 0 24px 40px rgba(16, 9, 69, 0.18);
+  --shadow-inner-card: 0 20px 32px rgba(0, 0, 0, 0.08);
+
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08) 0%, rgba(36, 36, 36, 0.65) 60%),
+    linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--headline);
+  padding: 2rem 1.25rem 4rem;
+}
+
+.pageWrapper {
+  max-width: 980px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.aboutCard {
+  background: var(--page-bg);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.aboutHeader {
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.12) 0%, rgba(0, 0, 0, 0) 70%),
+    linear-gradient(135deg, #4a3a80 0%, #7a5dad 60%, #5a4a92 100%);
+  color: #fff;
+  padding: 2rem 1rem 1.5rem;
+  text-align: center;
+  border-top-left-radius: var(--radius-card);
+  border-top-right-radius: var(--radius-card);
+}
+
+.aboutHeader h1 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.aboutBody {
+  padding: 2rem 1.25rem 2.5rem;
+  background: var(--page-bg);
+}
+
+@media (min-width: 600px) {
+  .aboutBody {
+    padding: 2rem 2rem 2.5rem;
+  }
+}
+
+.infoTabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.tabBtn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--inactive-tab-text);
+  transition: all 0.2s ease;
+}
+
+.tabBtn.active {
+  background: var(--accent-pill-bg);
+  color: var(--accent-pill-text);
+  border-radius: var(--radius-lg);
+  padding: 0.9rem 1rem;
+  position: relative;
+  box-shadow: 0 18px 24px rgba(80, 43, 141, 0.18);
+}
+
+.tabBtn.active::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.4rem;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--accent-pill-border);
+}
+
+.sectionHeadline {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 2rem;
+}
+
+.sectionHeadline h2 {
+  margin: 0 0 1rem;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.9rem, 1vw + 1.6rem, 2.2rem);
+  font-weight: 600;
+  color: var(--headline);
+}
+
+.subline {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--subtext);
+}
+
+.infoCard {
+  background: var(--panel-bg);
+  border-radius: 14px;
+  box-shadow: var(--shadow-inner-card);
+  border: 1px solid var(--panel-border);
+  padding: 1.5rem 1.25rem 2rem;
+  max-width: 90%;
+  margin: 0 auto 2rem;
+}
+
+@media (min-width: 600px) {
+  .infoCard {
+    padding: 2rem 2rem 2.25rem;
+  }
+}
+
+.infoCard h3 {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent-pill-border);
+  padding-bottom: 0.75rem;
+}
+
+.subsectionTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent-pill-text);
+  margin-bottom: 0.75rem;
+}
+
+.infoCard p {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--bodytext);
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 700px) {
+  .teamGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.teamCard {
+  background: #fff;
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1rem 1.25rem;
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.06);
+}
+
+.memberRole {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-pill-text);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.memberName {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--headline);
+  margin-bottom: 0.5rem;
+}
+
+.memberDesc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--bodytext);
+}
+
+/* Feedback Floating Button */
+.feedbackBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, var(--accent-pill-border), #9d7eff);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(122, 97, 173, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.feedbackBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(122, 97, 173, 0.6);
+}
+
+/* Modal Overlay & Card */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.modalContent {
+  position: relative;
+  background: var(--page-bg);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modalHeader {
+  background: linear-gradient(135deg, #4a3a80, #7a5dad);
+  color: white;
+  padding: 1.5rem 2rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.modalHeader h2 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+}
+
+.closeModal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.closeModal:hover {
+  color: #ffd700;
+}
+
+.modalBody {
+  padding: 2rem;
+}
+
+.fieldGroup {
+  margin-bottom: 1.5rem;
+}
+
+.fieldGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--headline);
+}
+
+.fieldGroup select,
+.fieldGroup input,
+.fieldGroup textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.submitBtn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--accent-pill-border), #9d7eff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(122, 97, 173, 0.4);
+}
+
+.message {
+  text-align: center;
+  background: #e8f5e8;
+  color: #2d5016;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.loginPromptBtn {
+  background-color: #6b5b95;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.loginPromptBtn:hover {
+  background-color: #8c77c5;
+}
+
+.loginPromptBtnBlack {
+  background-color: #2e2e2e;
+}
+
+.loginPromptBtnBlack:hover {
+  background-color: #4a4a4a;
+}

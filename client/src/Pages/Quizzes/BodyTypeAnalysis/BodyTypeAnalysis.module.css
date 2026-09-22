@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.pageWrapper {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #615564 0%, #3c314b 100%);
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.containerBodytype {
+  padding: 60px 20px 100px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #d4c6ff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.subtitle {
+  color: #d8d8d8;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.bodytypeGrid {
+  display: grid;
+  gap: 25px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  max-width: 1100px;
+  margin: 0 auto 70px;
+}
+
+.bodytypeCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 25px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.bodytypeCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.15);
+}
+
+.bodytypeCard.selected {
+  border: 2px solid #bba6ff;
+  box-shadow: 0 0 25px rgba(187, 166, 255, 0.4);
+  transform: scale(1.03);
+}
+
+.bodytypeCard img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  aspect-ratio: 440 / 1238;
+}
+
+.mascCard img {
+  aspect-ratio: 380 / 1047;
+}
+
+.bodytypeLabel {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #dcd3ff;
+}
+
+.continueBtn {
+  margin-top: 40px;
+  padding: 12px 30px;
+  background: #bba6ff;
+  color: #222;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.continueBtn:hover {
+  background: #d4c6ff;
+  transform: translateY(-3px);
+}
+
+.bgAccent {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.3;
+  z-index: 0;
+  animation: float 10s ease-in-out infinite alternate;
+}
+
+.bgAccentOne { background: #bba6ff; width: 400px; height: 400px; top: -80px; left: -80px; }
+.bgAccentTwo { background: #d2b0ff; width: 500px; height: 500px; bottom: -100px; right: -100px; }
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(25px); }
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modalContent {
+  background: linear-gradient(135deg, #e8e4f2 0%, #c6b9e8 100%);
+  border-radius: 35px;
+  border: none;
+  text-align: center;
+  color: #2e2e2e;
+  padding: 60px 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+  max-width: 500px;
+  width: 90%;
+  animation: fadeIn 0.4s ease;
+}
+
+.modalContent h5 {
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: #3e3e3e;
+  margin-bottom: 20px;
+}
+
+.modalContent p {
+  color: #4b4b4b;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.modalBtn {
+  background-color: #4b3f77;
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  padding: 15px 55px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.35s ease;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.modalBtn:hover {
+  background-color: #6b5b95;
+  transform: scale(1.08);
+}

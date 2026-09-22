@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+.pageWrapper {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #495482 0%, #9b83d3 100%);
+  min-height: 100vh;
+  color: #2c3e50;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.styleResultContainer {
+  max-width: 1400px;
+  width: 100%;
+  margin: 2rem auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 80vh;
+}
+
+.fashionDisplay {
+  flex: 1.2;
+  min-width: 380px;
+  background: linear-gradient(135deg, #f3e8ff, #fdf4ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.displayWrapper {
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemsContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.styleItem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 200px;
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+  object-fit: contain;
+  cursor: pointer;
+  border: 3px solid rgba(255, 255, 255, 0.95);
+  background-color: #ffffff;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.styleItem:hover {
+  transform: translate(-50%, -50%) scale(1.22) rotate(0deg) !important;
+  z-index: 100 !important;
+  box-shadow: 0 20px 45px rgba(109, 40, 217, 0.35);
+}
+
+.emptyState {
+  text-align: center;
+  color: #64748b;
+  font-size: 1rem;
+  padding: 1.5rem;
+}
+
+.styleInfo {
+  flex: 1;
+  min-width: 350px;
+  padding: 3rem 2.5rem;
+  background: #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.styleBadge {
+  display: inline-block;
+  align-self: flex-start;
+  background: linear-gradient(135deg, #8b5fbf, #6d28d9);
+  color: #ffffff;
+  padding: 0.45rem 1.4rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.styleTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.styleDescription {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.infoCard {
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+  padding: 1.25rem 1.5rem;
+  border-radius: 14px;
+  margin-bottom: 1.25rem;
+  border-left: 4px solid #8b5fbf;
+}
+
+.infoCard strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: #2c3e50;
+}
+
+.infoCard p {
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.actionButtons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.actionBtn {
+  padding: 0.8rem 1.25rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.actionBtn:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, #8b5fbf, #6d28d9);
+}
+
+.btnSecondary {
+  background: linear-gradient(135deg, #6babff, #2475ee);
+}
+
+.btnSuccess {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+@media (max-width: 900px) {
+  .fashionDisplay {
+    min-height: 420px;
+    padding: 1.5rem;
+  }
+
+  .styleItem {
+    width: 120px;
+    height: 150px;
+  }
+}

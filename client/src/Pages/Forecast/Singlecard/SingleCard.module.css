@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+.pageWrapper {
+  background: radial-gradient(circle at 50% 30%, #2a1a2a 0%, #0a050a 100%);
+  color: #e0c9d5;
+  font-family: 'Cormorant Garamond', serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+.pageWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.pageWrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Mystical Background Stars */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #c0a0c0;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #c0a0c0;
+  animation: twinkle 4s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+/* Main Container */
+.container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  padding: 1rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin: 0.5rem 0 1.5rem 0;
+  animation: fadeInDown 1s ease;
+}
+
+.header h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  text-shadow: 0 0 30px rgba(180, 130, 200, 0.6);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  color: #e0c9d5;
+}
+
+.header p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  font-style: italic;
+  color: #d0b0d0;
+}
+
+/* Card Container */
+.cardContainer {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0 1rem 0;
+}
+
+/* Single Card (Initial State) */
+.singleCard {
+  width: 200px;
+  height: 290px;
+  background: linear-gradient(135deg, #3a2a3a 0%, #1a0f1a 100%);
+  border: 3px solid #8a6a9a;
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(180, 130, 200, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  margin: 0 auto;
+  position: relative;
+}
+
+.singleCard:hover {
+  box-shadow: 0 30px 60px rgba(180, 130, 200, 0.6), 0 0 50px rgba(200, 150, 220, 0.4);
+  border-color: #c0a0c0;
+  transform: scale(1.05);
+}
+
+.singleCard:hover img {
+  transform: scale(1.02);
+  filter: brightness(1.1) drop-shadow(0 0 20px #c0a0c0);
+}
+
+.singleCard.fadeOut {
+  animation: mysticalDissolve 0.7s forwards;
+}
+
+@keyframes mysticalDissolve {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: blur(0);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2) rotate(5deg);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5) rotate(10deg);
+    filter: blur(5px);
+  }
+}
+
+.cardBackPattern {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardBackPattern img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 13px;
+  transition: all 0.3s ease;
+}
+
+/* Deck Container */
+.deckContainer {
+  width: 100%;
+  height: 350px;
+  position: relative;
+}
+
+.deckCard {
+  position: absolute;
+  width: 200px;
+  height: 290px;
+  background: linear-gradient(135deg, #3a2a3a 0%, #1a0f1a 100%);
+  border: 3px solid #8a6a9a;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.deckCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 13px;
+}
+
+/* Back Button */
+.backButton {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.6rem 1.5rem;
+  background: rgba(30, 20, 30, 0.7);
+  backdrop-filter: blur(5px);
+  border: 2px solid #8a6a9a;
+  color: #e0c9d5;
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: inline-block;
+}
+
+.backButton:hover {
+  background: #8a6a9a;
+  color: #0a050a;
+  box-shadow: 0 0 20px rgba(180, 130, 200, 0.5);
+}
+
+/* Message Area */
+.messageArea {
+  text-align: center;
+  margin: 1rem 0 0.5rem 0;
+  min-height: 40px;
+  font-size: 1.1rem;
+  color: #d0b0d0;
+}
+
+.instructionText {
+  animation: textGlow 2s infinite;
+}
+
+.shuffleText {
+  color: #c0a0c0;
+  font-style: italic;
+  animation: textPulse 0.8s infinite alternate;
+}
+
+@keyframes textPulse {
+  0% {
+    opacity: 0.5;
+    text-shadow: 0 0 10px #c0a0c0;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 30px #c0a0c0, 0 0 60px #a080c0;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px #c0a0c0;
+  }
+  50% {
+    text-shadow: 0 0 20px #c0a0c0;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

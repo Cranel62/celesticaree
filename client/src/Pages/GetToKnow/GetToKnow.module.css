@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.pageWrapper {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #8e57b375 0%, #634b8653 100%);
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Accents */
+.bgAccentOne {
+  position: absolute;
+  background: #bba6ff;
+  width: 400px;
+  height: 400px;
+  top: -80px;
+  left: -80px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.bgAccentTwo {
+  position: absolute;
+  background: #d2b0ff;
+  width: 500px;
+  height: 500px;
+  bottom: -100px;
+  right: -100px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.setupContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.setupBox {
+  background-color: #2e2e2e;
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.brandTitle {
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.setupBox h2 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.setupBox p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #cfcfcf;
+  margin-bottom: 25px;
+}
+
+.formControl {
+  background-color: #4b4b4b;
+  border: none;
+  color: #fff;
+  border-radius: 30px;
+  padding: 12px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.formControl::placeholder {
+  color: #cfcfcf;
+}
+
+.formControl:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(107, 91, 149, 0.25);
+}
+
+select.formControl {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23cfcfcf' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 16px;
+}
+
+.formControl::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.btnContinue {
+  background-color: #6b5b95;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  width: 100%;
+  font-weight: 600;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btnContinue:hover {
+  background-color: #8c77c5;
+}
